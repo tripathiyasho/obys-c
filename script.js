@@ -38,15 +38,14 @@ function loader() {
   tl.to("#loader", {
     ease: "circ.inOut",
     opacity: 0,
-    duration: 2.5,
+    duration: 2.3,
      });
 
   tl.from("#page1", {
     y: 1600,
-    delay: 0.3,
     opacity: 0,
-    duration: 0.5,
-    ease: power4,
+    duration: 1,
+    ease: "power4",
   });
 
   tl.to("#loader", {
@@ -55,3 +54,21 @@ function loader() {
 }
 
 loader();
+
+function cursorAnimation() {
+  document.addEventListener("mousemove",(dets) => {
+    gsap.to ("#crsr",{
+      left:dets.x,
+      top:dets.y,
+    })
+    })
+    
+    Shery.makeMagnet("#navsecond h4" /* Element to target.*/, {
+      //Parameters are optional.
+      ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+      duration: 1,
+    });
+  
+}
+
+cursorAnimation();
